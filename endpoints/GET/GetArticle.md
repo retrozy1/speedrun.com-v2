@@ -1,43 +1,41 @@
 Gets information about a site article (news post).
-## Required Parameters
-- id OR
-- slug
-
-_Bruteforced, other parameters may exist_
+# Parameters
+### Required
+- id **and/or** slug
 
 # Response
 ```
 article
-  body
-  commentsCount
-  ?community?
-  coverImagePath
-  createDate
-  id
-  publishDate
-  publishTags[]
-    #publishTag#
-  publishTarget
-  slug
-  stickyDate
-  summary
-  title
-  updateDate
-  userId
-gameList
-  #game#
-relatedArticleList
-  #article#
-userList
-  #user#
+    id
+    slug
+    title
+    summary
+    body
+    userId
+    createDate
+    updateDate
+    publishDate
+    publishTarget
+    publishTags[]
+        #publishTag#
+    coverImagePath
+    commentsCount
+    ?community
+relatedArticleList[]
+    #article#
+gameList[]
+    #game#
+userList[]
+    #user#
 ```
-## Property Descriptions
-- publishTags: Tags on the article, such as "site", "site news", "opinion".
+## Notable Property Descriptions
 - publishTarget: Always "news".
-- 
+- publishTags: Tags on the article.
+- gameList: Games embedded in the article.
+- userList: Includes the creator of the article, anybody @mentioned in the article, and the creators of related articles.
+- community: Bollean, true when posted by a non-admin user, false **OR** missing when marked as "official site news".
 
-
-
-
+## Object Types
+TODO
 
   
